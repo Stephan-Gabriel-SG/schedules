@@ -19,17 +19,17 @@ const Schedule = sequelize.define(
     prof: {
       type: DataTypes.STRING,
     },
-    salle: {
-      type: DataTypes.STRING,
-    },
     credit: {
-      type: DataTypes.DECIMAL,
+      type: DataTypes.INTEGER,
     },
     niveau: {
       type: DataTypes.STRING,
     },
     date_: {
       type: DataTypes.DATE,
+    },
+    salle: {
+      type: DataTypes.STRING,
     },
   },
   { tableName: 'schedule' }
