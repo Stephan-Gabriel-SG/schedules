@@ -1,10 +1,10 @@
 const express = require('express')
 const app = express()
 app.use(express.json())
-app.set('view engine', 'ejs')
-
+app.use(express.static(__dirname + '/views/styles'))
+app.set('views engine', 'ejs')
 app.get('/', (req, res, next) => {
-  res.render('accueil')
+  res.render('pages/accueil.ejs')
 })
 
 app.use((req, res, next) => {
