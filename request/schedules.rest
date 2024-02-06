@@ -1,0 +1,13 @@
+GET  http://localhost:3000/api/schedules 
+
+POST http://localhost:3000/api/schedules/add
+Content-Type: application/json
+
+{
+  "module":"Info",
+  "prof":"Jao",
+  "salle":"Cercle",
+  "niveau":"L3",
+  "date":"06-02-2024",
+  "credit":3
+}

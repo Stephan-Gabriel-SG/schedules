@@ -32,6 +32,6 @@ const Schedule = sequelize.define(
       type: DataTypes.STRING,
     },
   },
-  { tableName: 'schedule' }
+  { tableName: 'schedule', timestamps: false }
 )
 module.exports = { Schedule, sequelize }
