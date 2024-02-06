@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="/style.css" type="text/css" rel="stylesheet"/>
+        <title>Ajouter</title>
+    </head>
+    <body>
+        <h1>Formulaire</h1>
+        <div>
+          <form>
+            <% inputs.forEach(val=>{%>
+              <label for=<%= val.label %> ><%= val.label %></label>
+              <input type=<%= val.type %> id= <%= val.label %>>
+              <span class="error"><%=val.error%></span>
+            <% })%>           
+              <input type="submit" value="Ajouter">
+            </form>
+        </div>
+    </body>
+</html>
