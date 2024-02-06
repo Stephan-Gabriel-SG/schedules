@@ -6,12 +6,12 @@ navRouter.get('/', (req, res, next) => {
 navRouter.get('/addPlan', (req, res, next) => {
   res.render('pages/addForm.ejs', {
     inputs: [
-      { label: 'MODULE', type: 'text' },
-      { label: 'PROF', type: 'text' },
-      { label: 'CREDIT', type: 'number' },
-      { label: 'NIVEAU', type: 'text' },
-      { label: 'DATE', type: 'date' },
-      { label: 'SALLE', type: 'text' },
+      { label: 'MODULE', type: 'text', name: 'module' },
+      { label: 'PROF', type: 'text', name: 'prof' },
+      { label: 'CREDIT', type: 'number', name: 'credit' },
+      { label: 'NIVEAU', type: 'text', name: 'niveau' },
+      { label: 'DATE', type: 'date', name: 'date' },
+      { label: 'SALLE', type: 'text', name: 'salle' },
     ],
   })
 })

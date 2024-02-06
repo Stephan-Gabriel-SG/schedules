@@ -10,14 +10,14 @@ scheduleRoute.get('/', (req, res, next) => {
 scheduleRoute.post('/add', async (req, res, next) => {
   try {
     console.log(req.body)
-    const body = req.body
+    const { module, prof, credit, niveau, salle, date_ } = req.body
     const newSchedule = await Schedule.create({
-      module: body.module,
-      prof: body.prof,
-      credit: body.credit,
-      niveau: body.niveau,
-      salle: body.salle,
-      date_: body.date_,
+      module,
+      prof,
+      credit,
+      niveau,
+      salle,
+      date_,
     })
     res.status(201).send({ result: newSchedule })
   } catch (error) {
