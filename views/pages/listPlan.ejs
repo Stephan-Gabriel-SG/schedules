@@ -4,7 +4,6 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="./styles/style.css" type="text/css" rel="stylesheet"/>
-        <script type='text/javascript' src='/utils/func.js'></script>
         <title>List</title>
     </head>
     <body>
@@ -27,8 +26,8 @@
                     <tr>
                         <td><%= val.id %></td>
                         <td><%= val.module %></td>
-                        <td><%= val.credit %></td>
                         <td><%= val.prof %></td>
+                        <td><%= val.credit %></td>
                         <td><%= val.niveau %></td>
                         <td><%= val.date_ %></td>
                         <td><%= val.salle %></td>
@@ -39,11 +38,10 @@
             </tbody>
         </table>
     </body>
-</html>
-<dialog id="modifyDialog">
-    <form method="dialog" >
-        <h2>Modification</h2>
-        <h3>enregistrement n°<span id="idRecord"></span></h3>
+    <dialog id="modifyDialog">
+        <form method="dialog" >
+            <h2>Modification</h2>
+            <h3>enregistrement n°<span id="idRecord"></span></h3>
         <label for="module">Module</label>
         <input type="text" id="module" required/>
         <label for="enseignant">Enseignant</label>
@@ -54,9 +52,13 @@
         <input type="text" id="niveau" required/>
         <label for="dateRecord">Date</label>
         <input type="date" id="dateRecord" required/>
+        <label for="dateRecord">Salle</label>
+        <input type="text" id="salle" required/>
       <menu>
-        <button value="cancel">Annuler</button>
+        <button id="cancelBtn">Annuler</button>
         <button id="confirmBtn" value="default">Confirmer</button>
       </menu>
     </form>
   </dialog>
+    <script type='text/javascript' src='/utils/func.js'></script>
+</html>
