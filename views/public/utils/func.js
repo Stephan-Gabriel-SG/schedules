@@ -10,7 +10,11 @@ const deleteRecord = (id) => {
   ) {
     fetch(`/api/schedules/delete/${id}`, { method: 'DELETE' })
       .then((res) => {
-        alert('suppression avec succes')
+        if (res.success) {
+          alert('suppression avec succes')
+        } else {
+          alert("Échec de la suppression de l'enregistrement")
+        }
         location.reload()
       })
       .catch((error) => alert(error))
@@ -50,9 +54,12 @@ form.addEventListener('submit', (event) => {
     body: JSON.stringify(data),
   })
     .then((res) => {
-      alert(`l'enregistremen n° ${id} a été mise à jour avec succès`)
-      location.reload()
+      if (res.success) {
+        alert(`l'enregistremen n° ${id} a été mise à jour avec succès`)
+      } else {
+        alert(`Échec de la mise à jour de l'enregistremen n° ${id}`)
+      }
     })
-    .catch((error) => alert(`echeque de la mise à jour ${error}`))
+    .catch((error) => alert(`Erreur de la mise à jour ${error}`))
   modifyDialog.close()
 })
