@@ -2,6 +2,8 @@ const modifyDialog = document.getElementById('modifyDialog')
 const dialogCancelBtn = document.getElementById('cancelBtn')
 const dialogConfirmBtn = document.getElementById('confirmBtn')
 const form = document.getElementById('dialogForm')
+// SERVICES
+//DELETE RECORD
 const deleteRecord = (id) => {
   if (
     window.confirm(
@@ -20,6 +22,7 @@ const deleteRecord = (id) => {
       .catch((error) => alert(error))
   }
 }
+//MODIFY RECORD
 const modifyRecord = (detail) => {
   console.log('modify', detail)
   document.getElementById('idRecord').value = detail.id

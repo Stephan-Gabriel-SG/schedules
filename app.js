@@ -6,6 +6,7 @@ app.use(express.json())
 app.use(express.urlencoded())
 app.use(express.static(__dirname + '/views/public'))
 app.set('views engine', 'ejs')
+
 app.use('/', navRouter)
 app.use('/api/schedules', scheduleRouter)
 

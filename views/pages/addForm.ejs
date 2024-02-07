@@ -9,14 +9,15 @@
     <body>
         <h1>Formulaire</h1>
         <div>
-          <form method="POST" action="/api/schedules/add">
+          <form id="addForm">
             <% inputs.forEach(val=>{%>
               <label for=<%= val.label %> ><%= val.label %></label>
-              <input type=<%= val.type %> id= <%= val.label %> name=<%= val.name %>>
+              <input type=<%= val.type %> id= <%= val.label %> id=<%= val.name %>>
               <span class="error"><%=val.error%></span>
             <% })%>           
-              <input type="submit" value="Ajouter">
+              <input type="submit" value="Enregistrer">
             </form>
         </div>
     </body>
-</html>
+    </html>
+    <script type="text/javascript" src="/utils/addService.js"></script>
