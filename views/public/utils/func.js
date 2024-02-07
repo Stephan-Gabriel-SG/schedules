@@ -44,9 +44,9 @@ form.addEventListener('submit', (event) => {
   let niveau = document.getElementById('niveau').value
   let date_ = document.getElementById('dateRecord').value
   let salle = document.getElementById('salle').value
-  let data = { id, module, prof, credit, niveau, date_, salle }
+  let data = { module, prof, credit, niveau, date_, salle }
   console.log('data:', data)
-  fetch('/api/schedules/update', {
+  fetch(`/api/schedules/update/${id}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
