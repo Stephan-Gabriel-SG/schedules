@@ -28,8 +28,8 @@ scheduleRoute.post('/add', async (req, res, next) => {
 scheduleRoute.delete('/delete/:id', async (req, res, next) => {
   console.log(req.params.id)
   Schedule.destroy({ where: { id: req.params.id } })
-    .then((result) => res.send(201).send({ success: result }))
-    .catch((error) => res.send(500).send({ error }))
+    .then((result) => res.status(201).send({ success: result }))
+    .catch((error) => res.status(500).send({ error }))
 })
 
 module.exports = scheduleRoute
