@@ -1,3 +1,14 @@
+/**
+ * @swagger
+ * /api/schedules:
+ *   get:
+ *     summary: Récupère la liste des enregistrements d'EDT
+ *     responses:
+ *       200:
+ *         description: Succès
+ *       500:
+ *         description: Erreur serveur
+ */
 const modifyDialog = document.getElementById('modifyDialog')
 const dialogCancelBtn = document.getElementById('cancelBtn')
 const dialogConfirmBtn = document.getElementById('confirmBtn')
@@ -48,7 +59,6 @@ form.addEventListener('submit', (event) => {
   let date_ = document.getElementById('dateRecord').value
   let salle = document.getElementById('salle').value
   let data = { module, prof, credit, niveau, date_, salle }
-  console.log('data:', data)
   fetch(`/api/schedules/update/${id}`, {
     method: 'PUT',
     headers: {

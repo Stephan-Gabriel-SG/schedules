@@ -1,6 +1,16 @@
 const scheduleRoute = require('express').Router()
 const { Schedule } = require('../model/Schedule')
-
+/**
+ * @swagger
+ * /api/schedules:
+ *   get:
+ *     summary: Récupère la liste des enregistrements d'EDT
+ *     responses:
+ *       200:
+ *         description: Succès
+ *       500:
+ *         description: Erreur serveur
+ */
 scheduleRoute.get('/', (req, res, next) => {
   Schedule.findAll({})
     .then((result) => res.status(200).send({ list: result }))

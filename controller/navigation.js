@@ -1,5 +1,6 @@
 const navRouter = require('express').Router()
 const { Schedule } = require('../model/Schedule')
+
 navRouter.get('/', (req, res, next) => {
   res.render('pages/accueil.ejs')
 })
