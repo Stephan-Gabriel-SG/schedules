@@ -1,8 +1,20 @@
 *{
   font-family: system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 body{
-
+  line-height: 2em;
+}
+#container{
+    padding: 50px;
+}
+/* accueil */
+h1{
+  color:#2A9d8f;
+}
+h2{
+  color:#e76f51;
 }
 form{
   display: flex;

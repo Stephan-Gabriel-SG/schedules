@@ -12,8 +12,7 @@
           <form id="addForm">
             <% inputs.forEach(val=>{%>
               <label for=<%= val.label %> ><%= val.label %></label>
-              <input type=<%= val.type %> id= <%= val.label %> id=<%= val.name %>>
-              <span class="error"><%=val.error%></span>
+              <input type=<%= val.type %> id= <%= val.label %> id=<%= val.name %> required>
             <% })%>           
               <input type="submit" value="Enregistrer">
             </form>
