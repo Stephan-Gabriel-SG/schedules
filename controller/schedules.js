@@ -72,16 +72,52 @@ scheduleRoute.get('/:id', (req, res, next) => {
  *                 type: string
  *               date_:
  *                 type: string
+ *                 format: date-time
  *     responses:
  *       201:
  *         description: Enregistrement ajouté avec succès
+ *       400:
+ *         description: Requête invalide - l'un des champs ne respecte pas le format requis
  *       500:
  *         description: Erreur serveur
  */
 scheduleRoute.post('/add', async (req, res, next) => {
   try {
-    console.log(req.body)
     const { module, prof, credit, niveau, salle, date_ } = req.body
+    // Vérification du type de données et non-vide pour chaque champ
+    const fieldsToCheck = [
+      { field: module, fieldName: 'module', type: 'string' },
+      {
+        field: prof,
+        fieldName: 'prof',
+        type: 'string',
+        validation: /^[^\d\s]+$/,
+      },
+      { field: credit, fieldName: 'credit', type: 'number' },
+      {
+        field: niveau,
+        fieldName: 'niveau',
+        type: 'string',
+        validation: /^(L[1-3]|M[1-2])$/,
+      },
+      { field: salle, fieldName: 'salle', type: 'string' },
+      { field: date_, fieldName: 'date_', type: 'string' },
+    ]
+
+    for (const { field, fieldName, type, validation } of fieldsToCheck) {
+      if (typeof field !== type || field.trim() === '') {
+        return res.status(400).send({
+          error: `Le champ "${fieldName}" doit être une ${type} non vide.`,
+        })
+      }
+
+      if (validation && !validation.test(field)) {
+        return res.status(400).send({
+          error: `Le champ "${fieldName}" ne respecte pas le format requis.`,
+        })
+      }
+    }
+
     const newSchedule = await Schedule.create({
       module,
       prof,
@@ -111,7 +147,7 @@ scheduleRoute.post('/add', async (req, res, next) => {
  *       201:
  *         description: Enregistrement supprimé avec succès
  *       400:
- *          description: Requête invalide - ID non valide
+ *          description: Requête invalide - Données invalides
  *       500:
  *         description: Erreur serveur
  */
