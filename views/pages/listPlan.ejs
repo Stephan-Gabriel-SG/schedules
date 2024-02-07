@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="/style.css" type="text/css" rel="stylesheet"/>
+        <link href="./styles/style.css" type="text/css" rel="stylesheet"/>
         <title>List</title>
     </head>
     <body>
@@ -18,7 +18,7 @@
                         <th>Niveau</th>
                         <th>Date</th>
                         <th>Salle</th>
-                        <th>Action</th>
+                        <th colspan="2">Action</th>
                     </tr>
                 </thead>
             </thead>
@@ -31,12 +31,12 @@
                         <td><%= val.niveau %><td>
                         <td><%= val.date_ %><td>
                         <td><%= val.salle %><td>
-                        <td><button onclick=`delete(${val.id})`>del</button></td>
-                        <td><button onclick=`modify(${val.id})`>mod</button></td>
+                        <td><button onclick=`delete(<%=val.id%>)`>del</button></td>
+                        <td><button onclick=`modify(<%=val.id%>)`>mod</button></td>
                     </tr>
                 <% }) %>
             </tbody>
         </table>
     </body>
-    <script type='text/javascript' src='../utils/func.js'></script>
+    <script type='text/javascript' src='/utils/func.js'></script>
 </html>
