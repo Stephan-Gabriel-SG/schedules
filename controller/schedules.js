@@ -66,11 +66,36 @@ scheduleRoute.post('/add', async (req, res, next) => {
     res.status(500).send({ error: error.message })
   }
 })
-
+/**
+ * @swagger
+ * /api/schedules/delete/{id}:
+ *   delete:
+ *     summary: Supprime un enregistrement par son ID
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         description: ID de l'enregistrement à supprimer
+ *         schema:
+ *           type: integer
+ *     responses:
+ *       201:
+ *         description: Enregistrement supprimé avec succès
+ *       400:
+ *          description: Requête invalide - ID non valide
+ *       500:
+ *         description: Erreur serveur
+ */
 scheduleRoute.delete('/delete/:id', async (req, res, next) => {
   console.log(req.params.id)
   Schedule.destroy({ where: { id: req.params.id } })
-    .then((result) => res.status(201).send({ record: result }))
+    .then((result) => {
+      if (result) {
+        res.status(201).send({ record: result })
+      } else {
+        res.status(400).send({ error: 'invalid id' })
+      }
+    })
     .catch((error) => res.status(500).send({ error }))
 })
 /**
@@ -107,6 +132,8 @@ scheduleRoute.delete('/delete/:id', async (req, res, next) => {
  *     responses:
  *       200:
  *         description: Enregistrement mis à jour avec succès
+ *       400:
+ *         description: Requête invalide - ID non valide
  *       500:
  *         description: Erreur serveur
  */
@@ -114,7 +141,13 @@ scheduleRoute.put('/update/:id', async (req, res, next) => {
   console.log('body:', req.body)
   const body = req.body
   Schedule.update(body, { where: { id: req.params.id } })
-    .then((result) => res.status(200).send({ record: result }))
+    .then((result) => {
+      if (result) {
+        res.status(200).send({ record: result })
+      } else {
+        res.status(400).send({ error: 'invalid id' })
+      }
+    })
     .catch((error) => res.status(500).send({ error }))
 })
 module.exports = scheduleRoute
