@@ -7,7 +7,15 @@
         <title>List</title>
     </head>
     <body>
+        <div id="container">
+            <nav>
+                <a href="/">Accueil</a>
+                <a href="/viewPlan">List EDT</a>
+            </nav>
+
         <h1>Hebdomadaire planning</h1>
+        <div id="tableContainer">
+
         <table> 
              <thead>
                 <tr>
@@ -36,7 +44,9 @@
                     </tr>
                 <% }) %>
             </tbody>
-        </table>
+        </table>            
+         </div>
+    </div>
     </body>
     <dialog id="modifyDialog">
         <form id='dialogForm' method="dialog" >

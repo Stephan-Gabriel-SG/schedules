@@ -89,3 +89,29 @@ form input[type="submit"]:hover{
   margin-left: 0;
   transform: translateY(-2px);
 }
+
+/* list */
+#tableContainer{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+#tableContainer table{
+  margin-top: 20px;
+}
+#tableContainer table th{
+  background-color: var(--color-orange);
+  color: var(--color-darkBlue);
+}
+div#tableContainer td {
+    text-align: center;
+}
+div#tableContainer table th {
+    width: 8rem;
+}
+div#tableContainer table {
+    border-collapse: collapse;
+}
+div#tableContainer table tr {
+  border-bottom: 1px solid gray;
+}
