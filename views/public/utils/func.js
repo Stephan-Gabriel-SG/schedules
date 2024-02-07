@@ -10,7 +10,7 @@ const deleteRecord = (id) => {
   ) {
     fetch(`/api/schedules/delete/${id}`, { method: 'DELETE' })
       .then((res) => {
-        if (res.success) {
+        if (res.status === 201) {
           alert('suppression avec succes')
         } else {
           alert("Échec de la suppression de l'enregistrement")
@@ -54,7 +54,8 @@ form.addEventListener('submit', (event) => {
     body: JSON.stringify(data),
   })
     .then((res) => {
-      if (res.success) {
+      alert(JSON.stringify(res))
+      if (res.status === 200) {
         alert(`l'enregistremen n° ${id} a été mise à jour avec succès`)
       } else {
         alert(`Échec de la mise à jour de l'enregistremen n° ${id}`)
