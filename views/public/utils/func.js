@@ -12,6 +12,6 @@ const deleteRecord = (id) => {
       .catch((error) => alert(error))
   }
 }
-const modifyRecord = (id) => {
-  console.log('modify', id)
+const modifyRecord = (detail) => {
+  console.log('modify', detail)
 }
