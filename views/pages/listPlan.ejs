@@ -31,8 +31,8 @@
                         <td><%= val.niveau %><td>
                         <td><%= val.date_ %><td>
                         <td><%= val.salle %><td>
-                        <td><button onclick=`delete(<%=val.id%>)`>del</button></td>
-                        <td><button onclick=`modify(<%=val.id%>)`>mod</button></td>
+                        <td><button onclick="`()=>deleteRecord(<%=val.id%>)`">del</button></td>
+                        <td><button onclick="`()=>modifyRecord(<%=val.id%>)`">mod</button></td>
                     </tr>
                 <% }) %>
             </tbody>

@@ -1,8 +1,6 @@
-const delete=(id)=>{
-  console.log('delete ',id)
+const deleteRecord = (id) => {
+  console.log('delete ', id)
 }
-const modify=(id)=>{
+const modifyRecord = (id) => {
   console.log('modify', id)
 }
-
-module.exports={delete,modify}
