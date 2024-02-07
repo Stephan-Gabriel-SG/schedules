@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="./styles/style.css" type="text/css" rel="stylesheet"/>
+        <script type='text/javascript' src='/utils/func.js'></script>
         <title>List</title>
     </head>
     <body>
@@ -31,12 +32,11 @@
                         <td><%= val.niveau %><td>
                         <td><%= val.date_ %><td>
                         <td><%= val.salle %><td>
-                        <td><button onclick="`()=>deleteRecord(<%=val.id%>)`">del</button></td>
-                        <td><button onclick="`()=>modifyRecord(<%=val.id%>)`">mod</button></td>
+                        <td><button onclick="deleteRecord(<%=val.id%>)">del</button></td>
+                        <td><button onclick="modifyRecord(<%=val.id%>)">mod</button></td>
                     </tr>
                 <% }) %>
             </tbody>
         </table>
     </body>
-    <script type='text/javascript' src='/utils/func.js'></script>
 </html>

@@ -18,7 +18,6 @@ navRouter.get('/addPlan', (req, res, next) => {
 navRouter.get('/viewPlan', (req, res, next) => {
   Schedule.findAll({})
     .then((result) => {
-      console.log({ list: result })
       return res.status(200).render('pages/listPlan.ejs', { list: result })
     })
     .catch((error) => res.status(500).send({ error: error }))
