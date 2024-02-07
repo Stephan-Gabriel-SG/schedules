@@ -40,6 +40,19 @@ form.addEventListener('submit', (event) => {
   let niveau = document.getElementById('niveau').value
   let date_ = document.getElementById('dateRecord').value
   let salle = document.getElementById('salle').value
-  console.log('data:', { id, module, prof, credit, niveau, date_, salle })
+  let data = { id, module, prof, credit, niveau, date_, salle }
+  console.log('data:', data)
+  fetch('/api/schedules/update', {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  })
+    .then((res) => {
+      alert(`l'enregistremen n° ${id} a été mise à jour avec succès`)
+      location.reload()
+    })
+    .catch((error) => alert(`echeque de la mise à jour ${error}`))
   modifyDialog.close()
 })
