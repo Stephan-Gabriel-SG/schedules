@@ -20,7 +20,7 @@ navRouter.get('/viewPlan', (req, res, next) => {
     .then((result) => {
       return res.status(200).render('pages/listPlan.ejs', { list: result })
     })
-    .catch((error) => res.status(500).send({ error: error }))
+    .catch((error) => res.status(500).send({ error: 'internal server error' }))
 })
 
 module.exports = navRouter
