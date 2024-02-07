@@ -39,21 +39,22 @@
         </table>
     </body>
     <dialog id="modifyDialog">
-        <form method="dialog" >
+        <form id='dialogForm' method="dialog" >
             <h2>Modification</h2>
-            <h3>enregistrement n°<span id="idRecord"></span></h3>
+        <label>Enregistrement</label>
+        <input type="number" id="idRecord" name="id" value=""disabled/>
         <label for="module">Module</label>
-        <input type="text" id="module" required/>
+        <input type="text" id="module" name="module" value=""required/>
         <label for="enseignant">Enseignant</label>
-        <input type="text" id="enseignant" required/>
+        <input type="text" id="enseignant" required value="" name="prof"/>
         <label for="credit">Credit</label>
-        <input type="number" id="credit" required/>
+        <input type="number" id="credit" required  value="" name="credit"/>
         <label for="niveau">Niveau</label>
-        <input type="text" id="niveau" required/>
+        <input type="text" id="niveau" required value=""name="niveau"/>
         <label for="dateRecord">Date</label>
-        <input type="date" id="dateRecord" required/>
-        <label for="dateRecord">Salle</label>
-        <input type="text" id="salle" required/>
+        <input type="date" id="dateRecord" required value="" name="date_"/>
+        <label for="dateRecord" >Salle</label>
+        <input type="text" id="salle" name="salle" value="" required/>
       <menu>
         <button id="cancelBtn">Annuler</button>
         <button id="confirmBtn" value="default">Confirmer</button>

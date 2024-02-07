@@ -32,4 +32,8 @@ scheduleRoute.delete('/delete/:id', async (req, res, next) => {
     .catch((error) => res.status(500).send({ error }))
 })
 
+scheduleRoute.put('/update', async (req, res, next) => {
+  console.log('rrr', req.body)
+  res.status(200)
+})
 module.exports = scheduleRoute
