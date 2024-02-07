@@ -1,5 +1,6 @@
-GET  http://localhost:3000/api/schedules 
 
+GET http://localhost:3000/api/schedules 
+####
 POST http://localhost:3000/api/schedules/add
 Content-Type: application/json
 

@@ -25,4 +25,8 @@ scheduleRoute.post('/add', async (req, res, next) => {
   }
 })
 
+scheduleRoute.delete('/delete/:id', async (req, res, next) => {
+  console.log(req.params.id)
+})
+
 module.exports = scheduleRoute

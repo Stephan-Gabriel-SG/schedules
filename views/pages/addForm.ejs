@@ -9,7 +9,7 @@
     <body>
         <h1>Formulaire</h1>
         <div>
-          <form method="POST" action="api/schedules/add">
+          <form method="POST" action="/api/schedules/add">
             <% inputs.forEach(val=>{%>
               <label for=<%= val.label %> ><%= val.label %></label>
               <input type=<%= val.type %> id= <%= val.label %> name=<%= val.name %>>

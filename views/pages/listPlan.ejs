@@ -8,5 +8,35 @@
     </head>
     <body>
         <h1>Hebdomadaire planning</h1>
+        <table>
+            <thead>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Module</th>
+                        <th>Prof</th>
+                        <th>Niveau</th>
+                        <th>Date</th>
+                        <th>Salle</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+            </thead>
+            <tbody>
+                <% list.forEach(val=>{%>
+                    <tr>
+                        <td><%= val.id %><td>
+                        <td><%= val.module %><td>
+                        <td><%= val.prof %><td>
+                        <td><%= val.niveau %><td>
+                        <td><%= val.date_ %><td>
+                        <td><%= val.salle %><td>
+                        <td><button onclick=`delete(${val.id})`>del</button></td>
+                        <td><button onclick=`modify(${val.id})`>mod</button></td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
     </body>
+    <script type='text/javascript' src='../utils/func.js'></script>
 </html>
