@@ -2,9 +2,11 @@
   font-family: system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   margin: 0;
   padding: 0;
+  font-size: 1.1rem;
 }
 body{
   line-height: 2em;
+  background-color: aliceblue;
 }
 #container{
   padding: 50px;
@@ -12,12 +14,15 @@ body{
 /* accueil */
 #container h1{
   color:#2A9d8f;
+  font-size: xx-large;
   padding-bottom: 30px;
   border-bottom: 1px solid #dbdbdb;
 }
 #container h2{
   margin-top: 1.2em;
-  color:#e76f51;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: #e76f51;
 }
 #container ul{
   margin-left: 1.8em;
