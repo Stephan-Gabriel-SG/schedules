@@ -7,16 +7,22 @@
         <title>Ajouter</title>
     </head>
     <body>
+      <div id="container">
+        <nav>
+            <a href="/">Accueil</a>
+            <a href="/viewPlan">List EDT</a>
+        </nav>
         <h1>Formulaire</h1>
         <div>
           <form id="addForm">
             <% inputs.forEach(val=>{%>
-              <label for=<%= val.label %> ><%= val.label %></label>
+              <div><label for=<%= val.label %> ><%= val.label %></label>
               <input type=<%= val.type %> id= <%= val.label %> id=<%= val.name %> required>
-            <% })%>           
+            </div><% })%>           
               <input type="submit" value="Enregistrer">
             </form>
-        </div>
+          </div>
+      </div>
     </body>
     </html>
     <script type="text/javascript" src="/utils/addService.js"></script>

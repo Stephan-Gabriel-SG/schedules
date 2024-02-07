@@ -46,4 +46,25 @@ body{
 form{
   display: flex;
   flex-direction: column;
+  align-items: baseline;
+}
+form label{
+  text-transform: lowercase;
+}
+form label::first-letter{
+  text-transform: uppercase;
+}
+form input:not([type="submit"]){
+  padding: 5px 5px;
+  border-radius: 6px;
+  background-color: var(--color-orange);
+  border: none;
+}
+form input[type="submit"]{
+  border:none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  background-color: var(--color-darkBlue);
+  color: white;
+  cursor: pointer;
 }
