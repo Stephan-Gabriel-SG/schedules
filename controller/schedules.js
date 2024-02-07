@@ -48,7 +48,36 @@ scheduleRoute.get('/:id', (req, res, next) => {
     })
     .catch((error) => res.status(500).send({ error: error }))
 })
-
+/**
+ * @swagger
+ * /api/schedules/add:
+ *   post:
+ *     summary: Ajoute un nouvel enregistrement
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               module:
+ *                 type: string
+ *               prof:
+ *                 type: string
+ *               credit:
+ *                 type: integer
+ *               niveau:
+ *                 type: string
+ *               salle:
+ *                 type: string
+ *               date_:
+ *                 type: string
+ *     responses:
+ *       201:
+ *         description: Enregistrement ajouté avec succès
+ *       500:
+ *         description: Erreur serveur
+ */
 scheduleRoute.post('/add', async (req, res, next) => {
   try {
     console.log(req.body)
