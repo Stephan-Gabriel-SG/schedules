@@ -75,5 +75,8 @@ form input[type="submit"]{
   background-color: var(--color-darkBlue);
   color: white;
   cursor: pointer;
-
+  transition: .3s;
+}
+form input[type="submit"]:hover{
+  background-color: #162f38;
 }
