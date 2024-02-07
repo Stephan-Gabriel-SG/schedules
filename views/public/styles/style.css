@@ -3,6 +3,11 @@
   margin: 0;
   padding: 0;
   font-size: 1.1rem;
+  --color-blue-base:#2A9d8f;
+  --color-red-base:#e76f51;
+  --color-darkBlue:#264653;
+  --color-yellow:#e9c46a;
+  --color-orange:#f4a261;
 }
 body{
   line-height: 2em;
@@ -13,16 +18,16 @@ body{
 }
 /* accueil */
 #container h1{
-  color:#2A9d8f;
+  color:var(--color-darkBlue);
   font-size: xx-large;
   padding-bottom: 30px;
-  border-bottom: 1px solid #dbdbdb;
+  border-bottom: 2px solid #b3b3b3;
 }
 #container h2{
   margin-top: 1.2em;
   margin-bottom: 10px;
   font-size: 1.5em;
-  color: #e76f51;
+  color:var(--color-red-base)
 }
 #container ul{
   margin-left: 1.8em;
@@ -31,6 +36,12 @@ body{
   color:#264653;
   text-decoration: none;
   font-weight: 500;
+  transition: .3s;
+}
+#container a:hover,#container li{
+  color:var(--color-red-base);
+  margin-left: 5px;
+  
 }
 form{
   display: flex;
