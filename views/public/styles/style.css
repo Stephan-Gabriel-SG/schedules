@@ -52,6 +52,9 @@ form,form#addForm div{
 #formContainer,form#addForm {
   align-items: center;
 }
+form#addForm,form input[type="submit"]{
+  margin-top: 15px;
+}
 form label{
   text-transform: lowercase;
 }
@@ -72,4 +75,5 @@ form input[type="submit"]{
   background-color: var(--color-darkBlue);
   color: white;
   cursor: pointer;
+
 }
