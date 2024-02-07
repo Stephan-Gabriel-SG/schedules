@@ -87,33 +87,30 @@ scheduleRoute.post('/add', async (req, res, next) => {
     // Vérification du type de données et non-vide pour chaque champ
     const fieldsToCheck = [
       { field: module, fieldName: 'module', type: 'string' },
-      {
-        field: prof,
-        fieldName: 'prof',
-        type: 'string',
-        validation: /^[^\d\s]+$/,
-      },
+      { field: prof, fieldName: 'prof', type: 'string' },
       { field: credit, fieldName: 'credit', type: 'number' },
-      {
-        field: niveau,
-        fieldName: 'niveau',
-        type: 'string',
-        validation: /^(L[1-3]|M[1-2])$/,
-      },
+      { field: niveau, fieldName: 'niveau', type: 'string' },
       { field: salle, fieldName: 'salle', type: 'string' },
       { field: date_, fieldName: 'date_', type: 'string' },
     ]
 
-    for (const { field, fieldName, type, validation } of fieldsToCheck) {
-      if (typeof field !== type || field.trim() === '') {
+    const validNiveaux = ['L1', 'L2', 'L3', 'M1', 'M2']
+
+    for (const { field, fieldName, type } of fieldsToCheck) {
+      if (
+        (typeof field !== 'string' && typeof field !== 'number') ||
+        (typeof field === 'string' && field.trim() === '')
+      ) {
         return res.status(400).send({
-          error: `Le champ "${fieldName}" doit être une ${type} non vide.`,
+          error: `Le champ "${fieldName}" doit être ${
+            typeof field === 'string' ? 'une chaîne de caractères' : 'un nombre'
+          } non vide.`,
         })
       }
 
-      if (validation && !validation.test(field)) {
+      if (fieldName === 'niveau' && !validNiveaux.includes(field)) {
         return res.status(400).send({
-          error: `Le champ "${fieldName}" ne respecte pas le format requis.`,
+          error: `Le champ "${fieldName}" doit être l'un des niveaux suivants : L1, L2, L3, M1 ou M2.`,
         })
       }
     }
