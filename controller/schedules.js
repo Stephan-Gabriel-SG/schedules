@@ -158,6 +158,7 @@ scheduleRoute.delete('/delete/:id', async (req, res, next) => {
  *                 type: string
  *               date_:
  *                 type: string
+ *                 format: date-time
  *     responses:
  *       200:
  *         description: Enregistrement mis à jour avec succès
