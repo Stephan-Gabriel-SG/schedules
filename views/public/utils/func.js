@@ -12,10 +12,10 @@ const deleteRecord = (id) => {
       .then((res) => {
         if (res.status === 201) {
           alert('suppression avec succes')
+          location.reload()
         } else {
           alert("Échec de la suppression de l'enregistrement")
         }
-        location.reload()
       })
       .catch((error) => alert(error))
   }
@@ -54,9 +54,9 @@ form.addEventListener('submit', (event) => {
     body: JSON.stringify(data),
   })
     .then((res) => {
-      alert(JSON.stringify(res))
       if (res.status === 200) {
         alert(`l'enregistremen n° ${id} a été mise à jour avec succès`)
+        location.reload()
       } else {
         alert(`Échec de la mise à jour de l'enregistremen n° ${id}`)
       }

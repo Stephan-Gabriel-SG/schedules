@@ -6,6 +6,17 @@ scheduleRoute.get('/', (req, res, next) => {
     .then((result) => res.status(200).send({ list: result }))
     .catch((error) => res.status(500).send({ error: error }))
 })
+scheduleRoute.get('/:id', (req, res, next) => {
+  Schedule.findOne({ where: { id: req.params.id } })
+    .then((sc) => {
+      if (sc) {
+        res.status(200).send(sc)
+      } else {
+        res.status(404).send({ error: 'invalid id' })
+      }
+    })
+    .catch((error) => res.status(500).send({ error: error }))
+})
 
 scheduleRoute.post('/add', async (req, res, next) => {
   try {
