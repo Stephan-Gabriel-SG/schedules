@@ -41,7 +41,6 @@ body{
 #container a:hover,#container li{
   color:var(--color-red-base);
   margin-left: 5px;
-  
 }
 #formContainer,
 form,form#addForm div{
@@ -79,4 +78,14 @@ form input[type="submit"]{
 }
 form input[type="submit"]:hover{
   background-color: #162f38;
+}
+/* nav */
+#container nav {
+    display: flex;
+    gap: 35px;
+    margin-bottom: 15px;
+}
+#container nav a:hover{
+  margin-left: 0;
+  transform: translateY(-2px);
 }
