@@ -105,6 +105,7 @@ form input[type="submit"]:hover{
 }
 div#tableContainer td {
     text-align: center;
+    padding: 5px 0px;
 }
 div#tableContainer table th {
     width: 8rem;
@@ -113,7 +114,6 @@ div#tableContainer table {
     border-collapse: collapse;
 }
 div#tableContainer table tr {
-  padding: 10px 0;
   border-bottom: 1px solid gray;
 }
 /* image */
@@ -127,4 +127,36 @@ button{
 }
 img{
   width: 30px;
+}
+
+/* Modal dialog */
+form#dialogForm {
+  background: white;
+  position: fixed;
+  box-shadow: 2px 4px 18px 1px black;
+  padding: 2% 8%;
+  border-radius: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+menu {
+  display: flex;
+}
+menu button{
+  margin-top: 15px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  color: white;
+}
+#confirmBtn{
+  background: var(--color-red-base);
+}
+#cancelBtn{
+   background-color:rgba(10, 106, 179, 0.881);
+}
+#modifyDialog h2 {
+  font-size: xx-large;
+  text-align: center;
 }
