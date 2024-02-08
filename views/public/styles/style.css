@@ -113,5 +113,18 @@ div#tableContainer table {
     border-collapse: collapse;
 }
 div#tableContainer table tr {
+  padding: 10px 0;
   border-bottom: 1px solid gray;
+}
+/* image */
+button{
+  border: none;
+  background: none;
+  margin-left: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+img{
+  width: 30px;
 }

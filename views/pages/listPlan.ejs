@@ -39,8 +39,8 @@
                         <td><%= val.niveau %></td>
                         <td><%= val.date_ %></td>
                         <td><%= val.salle %></td>
-                        <td><button onclick="deleteRecord(<%=val.id%>)">del</button></td>
-                        <td><button onclick="modifyRecord(<%=JSON.stringify(val)%>)">mod</button></td>
+                        <td><button onclick="deleteRecord(<%=val.id%>)"><img src="/icons/delete.png"/></button></td>
+                        <td><button onclick="modifyRecord(<%=JSON.stringify(val)%>)"><img src="/icons/modify.png"/></button></td>
                     </tr>
                 <% }) %>
             </tbody>
